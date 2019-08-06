@@ -1,41 +1,16 @@
-import React from 'react';
-import { render } from 'react-dom';
-
-const Pet = ({ name, animal, breed }) => {
-    return React.createElement("div", {}, [
-        React.createElement('h1', {}, name),
-        React.createElement('h2', {}, animal),
-        React.createElement('h2', {}, breed)
-    ])
-};
+import React from "react";
+import ReactDOM from "react-dom";
+import Pet from "./Pet";
 
 const App = () => {
-    return React.createElement(
-        "div",
-        { id: "something important" },
-        [
-            React.createElement("h1", {}, "Adopt Me!!"),
-            React.createElement(Pet, {
-                name: 'Hommie',
-                animal: 'dog',
-                breed: 'Chiguaga'
-            }),
-
-            React.createElement(Pet, {
-                name: 'Snar',
-                animal: 'dog',
-                breed: 'Doberman'
-
-            }),
-
-            React.createElement(Pet,
-                {
-                    name: 'Hairy',
-                    animal: 'dog',
-                    breed: 'Chiguaga'
-                }),
-        ]
-    );
+  return (
+    <div>
+      <h1>Adopt Me!</h1>
+      <Pet name="Luna" animal="dog" breed="Havanese" />
+      <Pet name="Pepper" animal="bird" breed="Cockatiel" />
+      <Pet name="Doink" animal="cat" breed="Mix" />
+    </div>
+  );
 };
 
-render(React.createElement(App), document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
